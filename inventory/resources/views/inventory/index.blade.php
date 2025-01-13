@@ -17,6 +17,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Type</th> <!-- Added Type column -->
                 <th>Price</th>
                 <th>Actions</th>
             </tr>
@@ -25,6 +26,7 @@
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $product->name }}</td>
+                    <td>{{ $product->type }}</td> <!-- Display the type -->
                     <td>{{ $product->price }}</td>
                     <td>
                         <a href="{{ route('inventory.edit', $product) }}" class="btn btn-warning btn-sm">Edit</a>

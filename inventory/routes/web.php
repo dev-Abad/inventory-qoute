@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\QuotationController;
 
+Route::get('/', function () {
+    return redirect()->route('inventory.index');
+});
+
 Route::resource('inventory', InventoryController::class);
 Route::get('quotation', [QuotationController::class, 'index'])->name('quotation.index');
 Route::post('quotation/generate', [QuotationController::class, 'generateQuotation'])->name('quotation.generate');
